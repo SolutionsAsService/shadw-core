@@ -1,0 +1,15 @@
+# Preserve third-party source and the verbatim upstream API document.
+/vendor/
+/docs/JAVASCRIPT_API.md
+
+# Local compiler output, log stores, caches and QA artifacts are not source.
+/target/
+/artifacts/
+/data/
+/local-data/
+/campus-example/
+/coverage/
+/sandbox/
+/tmp/
+/node_modules/
+/package-lock.json

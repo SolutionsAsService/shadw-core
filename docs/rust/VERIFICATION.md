@@ -8,6 +8,9 @@ been performed. Windows-native and macOS builds have not been verified here.
 ## Verified results — 2026-09-30
 
 - Formatting, strict workspace Clippy and native build: passed.
+- Existing JavaScript `npm run lint`: passed with zero errors; 17 pre-existing
+  upstream require-await warnings retained. New-script syntax and normalized
+  executable-structure checks passed; formatting changes preserve behavior.
 - **25 workspace tests:** 11 core integrity/persistence/bounds, 2 real JS11
   compatibility-fixture tests and 12 university database tests: passed.
 - **3 vendored recovery regressions:** passed.

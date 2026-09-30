@@ -18,3 +18,9 @@
 - Whole-batch cryptographic validation is not crash-atomic storage. Describe
   prevalidation and IO failure semantics separately; do not promise transactions
   that the underlying engine does not provide.
+- A vendored crate can carry its own `.gitignore` that hides a required Cargo.lock.
+  Compare staged files with the exact local build inputs before delivery. Keep
+  `--locked` in CI and explicitly track the tested upstream lockfile.
+- Adding an independent Rust app still affects repository-wide legacy lint globs.
+  Preserve third-party and archival bytes with narrow formatter exclusions, but
+  format and lint newly authored UI/test code using the existing project tools.

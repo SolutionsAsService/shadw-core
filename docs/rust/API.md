@@ -4,18 +4,18 @@ The demo serves same-origin JSON on `http://127.0.0.1:4192`. All writes are
 serialized through one local Rust database handle. Start it with
 `cargo run --locked -p university-demo -- serve --data ./data/university`.
 
-| Method | Path | Meaning |
-| --- | --- | --- |
-| GET | `/api/health` | Runtime, public log info and project counts; not an integrity audit |
-| GET | `/api/projects?search=energy&status=active&course=ENV-402` | Current matching projects |
-| GET | `/api/projects/{id}` | One current project |
-| POST | `/api/projects` | Append creation; 201 on success |
-| PATCH | `/api/projects/{id}` | Append revision-checked edit |
-| POST | `/api/projects/{id}/archive` | Append final archive event |
-| GET | `/api/projects/{id}/history` | Complete project event history |
-| GET | `/api/events` | Latest 50 events, newest first |
-| POST | `/api/audit` | Authenticate signed head and available block bytes |
-| GET | `/api/export` | Public signed proof bundle download |
+| Method | Path                                                       | Meaning                                                             |
+| ------ | ---------------------------------------------------------- | ------------------------------------------------------------------- |
+| GET    | `/api/health`                                              | Runtime, public log info and project counts; not an integrity audit |
+| GET    | `/api/projects?search=energy&status=active&course=ENV-402` | Current matching projects                                           |
+| GET    | `/api/projects/{id}`                                       | One current project                                                 |
+| POST   | `/api/projects`                                            | Append creation; 201 on success                                     |
+| PATCH  | `/api/projects/{id}`                                       | Append revision-checked edit                                        |
+| POST   | `/api/projects/{id}/archive`                               | Append final archive event                                          |
+| GET    | `/api/projects/{id}/history`                               | Complete project event history                                      |
+| GET    | `/api/events`                                              | Latest 50 events, newest first                                      |
+| POST   | `/api/audit`                                               | Authenticate signed head and available block bytes                  |
+| GET    | `/api/export`                                              | Public signed proof bundle download                                 |
 
 Example creation:
 

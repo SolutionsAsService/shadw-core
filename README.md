@@ -77,11 +77,11 @@ transfer returns an error rather than pretending new blocks were imported.
 
 The workspace has three small packages:
 
-| Package | Responsibility |
-| --- | --- |
-| [`shadw-core`](crates/shadw-core) | Native append/get/batch, verified reads, signed proof transfer, audit and persistence |
-| [`university-db`](crates/university-db) | Typed project commands, optimistic revisions, event validation and searchable replay |
-| [`university-demo`](apps/university-demo) | Loopback HTTP app and command-line examples |
+| Package                                   | Responsibility                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------------- |
+| [`shadw-core`](crates/shadw-core)         | Native append/get/batch, verified reads, signed proof transfer, audit and persistence |
+| [`university-db`](crates/university-db)   | Typed project commands, optimistic revisions, event validation and searchable replay  |
+| [`university-demo`](apps/university-demo) | Loopback HTTP app and command-line examples                                           |
 
 ```rust
 use shadw_core::Core;
