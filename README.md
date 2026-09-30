@@ -3,6 +3,13 @@
 A signed, single-writer append-only log in Rust, with **Campus Ledger**, a working
 university-project database and local browser app built on its event history.
 
+> **Campus Ledger now has its own home:**
+> [SolutionsAsService/campus-ledger](https://github.com/SolutionsAsService/campus-ledger)
+> is the canonical repository for the standalone university-project application.
+> This repository remains the home of the SHADW Core Rust library. Its embedded
+> Campus Ledger example is retained as a historical reference; existing code and
+> local data are not removed or migrated automatically.
+
 The Rust implementation runs without Node.js. It reuses the maintained
 [`datrs/hypercore`](https://github.com/datrs/hypercore) cryptographic/storage engine
 rather than reimplementing cryptography. A bounded vendored persistence patch
@@ -18,7 +25,7 @@ history when opened.
 
 ![Campus Ledger running on the native Rust server](docs/rust/campus-ledger.png)
 
-## Run Campus Ledger
+## Run the embedded Campus Ledger reference
 
 Install a current stable [Rust toolchain](https://rustup.rs/) and a native C linker
 (e.g. the platform's standard build tools). No Node.js or database server is
