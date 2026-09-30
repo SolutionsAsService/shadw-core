@@ -1,0 +1,13 @@
+# Third-party sources retain their upstream conventions and tooling.
+/vendor/
+
+# Generated compiler outputs, local databases and QA artifacts are not source.
+/target/
+/artifacts/
+/data/
+/local-data/
+/campus-example/
+/coverage/
+/sandbox/
+/tmp/
+/package-lock.json

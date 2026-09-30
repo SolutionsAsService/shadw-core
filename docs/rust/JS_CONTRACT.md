@@ -27,13 +27,13 @@ All hashes below are BLAKE2b with **32-byte output**, not a truncated BLAKE2b-51
 Integers in these hash/signature preimages are fixed-width unsigned 64-bit little
 endian; wire compact-encoding integers are a different concern.
 
-| Value | Hash/signature preimage |
-| --- | --- |
-| Leaf | `0x00 || u64LE(block byte length) || block bytes` |
-| Parent | `0x01 || u64LE(left.size + right.size) || left.hash || right.hash` |
-| Tree digest | `0x02 || (root.hash || u64LE(root.index) || u64LE(root.size))*` |
-| Empty tree digest | hash of the single byte `0x02` |
-| Discovery key | keyed BLAKE2b-256(message=`hypercore`, key=core key) |
+| Value             | Hash/signature preimage                              |
+| ----------------- | ---------------------------------------------------- |
+| Leaf              | `0x00                                                |     | u64LE(block byte length)      |     | block bytes`      |
+| Parent            | `0x01                                                |     | u64LE(left.size + right.size) |     | left.hash         |     | right.hash`         |
+| Tree digest       | `0x02                                                |     | (root.hash                    |     | u64LE(root.index) |     | u64LE(root.size))*` |
+| Empty tree digest | hash of the single byte `0x02`                       |
+| Discovery key     | keyed BLAKE2b-256(message=`hypercore`, key=core key) |
 
 Flat-tree leaves have indices `2 * blockIndex`; parent inputs are ordered by
 flat-tree index and tree roots stay in ascending forest order. Tree digest is

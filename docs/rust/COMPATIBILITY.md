@@ -10,21 +10,21 @@ unmodified upstream release.
 
 ## Supported surface
 
-| Capability | Rust implementation |
-| --- | --- |
-| Create/open durable log, append/batch/get | Native async Rust; exclusively locked store |
-| Verified read and full available-block audit | Fresh public-key verifier authenticates actual bytes |
-| Public-key read-only replica | Supported; cannot append or import into a writer |
-| Sparse proof transfer and filling missing blocks | Supported through versioned SHADW JSON bundles |
-| Extension of an accepted history | Prefix consistency checked before accepted changes |
-| JavaScript explicit compat-mode Merkle proofs | Bounded cross-runtime fixture target; see verification evidence |
-| JS11 on-disk `hypercore-storage`/RocksDB | **Not supported**; distinct Rust directory marker prevents silent opening |
-| JS11 non-compat manifest/multisignature features | **Not supported**; raw Ed25519 compat signatures only |
-| Noise, Hyperswarm, protomux, JS streams/session API | **Not implemented**; no peer networking is implied by proof transfer |
-| Encryption, user accounts, access policies | **Not implemented** |
-| Forks, truncate, clear, rewrite, multi-writer merge | **Not exposed**; fork-zero append-only contract |
-| Latest-head discovery / whole-store rollback protection | Needs externally pinned checkpoints; not implemented |
-| Project database | Verified event-sourced projection, not SQL or a distributed transaction engine |
+| Capability                                              | Rust implementation                                                            |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Create/open durable log, append/batch/get               | Native async Rust; exclusively locked store                                    |
+| Verified read and full available-block audit            | Fresh public-key verifier authenticates actual bytes                           |
+| Public-key read-only replica                            | Supported; cannot append or import into a writer                               |
+| Sparse proof transfer and filling missing blocks        | Supported through versioned SHADW JSON bundles                                 |
+| Extension of an accepted history                        | Prefix consistency checked before accepted changes                             |
+| JavaScript explicit compat-mode Merkle proofs           | Bounded cross-runtime fixture target; see verification evidence                |
+| JS11 on-disk `hypercore-storage`/RocksDB                | **Not supported**; distinct Rust directory marker prevents silent opening      |
+| JS11 non-compat manifest/multisignature features        | **Not supported**; raw Ed25519 compat signatures only                          |
+| Noise, Hyperswarm, protomux, JS streams/session API     | **Not implemented**; no peer networking is implied by proof transfer           |
+| Encryption, user accounts, access policies              | **Not implemented**                                                            |
+| Forks, truncate, clear, rewrite, multi-writer merge     | **Not exposed**; fork-zero append-only contract                                |
+| Latest-head discovery / whole-store rollback protection | Needs externally pinned checkpoints; not implemented                           |
+| Project database                                        | Verified event-sourced projection, not SQL or a distributed transaction engine |
 
 JS11 constructors can select compat mode by default when no manifest is supplied;
 we nevertheless request `compat: true` explicitly in interoperability fixtures.
